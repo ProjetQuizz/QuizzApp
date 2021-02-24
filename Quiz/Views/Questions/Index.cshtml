@@ -1,0 +1,53 @@
+﻿@model IEnumerable<QuizApp.Models.QuizQuestion>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered table-hover table-responsive">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Quiz.Subject)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QstText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsMultiple)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumOrdrer)
+        </th>
+        <th>
+            <text>Option</text>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Quiz.Subject)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QstText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsMultiple)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumOrdrer)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

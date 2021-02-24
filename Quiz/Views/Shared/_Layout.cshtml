@@ -1,0 +1,59 @@
+﻿@using QuizApp.Models
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Mon application ASP.NET</title>
+    
+    <link href="~/Content/css/reset.css" rel="stylesheet" />
+
+    <link rel="stylesheet/less"
+          type="text/css"
+          href="@Url.Content("~/content/less/style.less")" />
+    <script src="//cdn.jsdelivr.net/npm/less@3.13"></script>
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <header>
+        <div class="container ">
+            <a href="/" class="logo">
+                <img src="~/Content/images/logo-TechQuizz.png" />
+            </a>
+        </div>
+            <!--<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">-->
+            @*<div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+            </div>*@
+            <!--<div class="navbar-collapse collapse">
+
+                    <ul class="nav navbar-nav navbar-right">
+                    </ul>
+                </div>
+            </div>
+        </div>-->
+    </header>
+    
+    <div class="body-content">
+        <div class="container ">
+            @RenderBody()
+        </div>
+       
+    </div>
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Mon application ASP.NET</p>
+    </footer>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

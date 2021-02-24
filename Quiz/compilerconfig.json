@@ -1,0 +1,14 @@
+﻿[
+  {
+    "outputFile": "Content/style.css",
+    "inputFile": "Content/style.less"
+  },
+  {
+    "outputFile": "Content/less/style.css",
+    "inputFile": "Content/less/style.less"
+  },
+  {
+    "outputFile": "Content/less/colors.css",
+    "inputFile": "Content/less/colors.less"
+  }
+]

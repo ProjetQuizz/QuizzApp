@@ -1,0 +1,65 @@
+﻿@model QuizApp.ViewModel.QuizListViewModel
+@using QuizApp.Models
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="Page-Connexion">
+    <p>
+        Chèr(e) candidat(e), bienvenue à vous !
+        Vous allez débuter un parcours de recrutement Jehann
+        qui comptera pour votre évaluation.
+        Cette méthode, qui contient plusieurs  questions,
+        Vous donne l’opportunité d’exprimer vos compétences
+        au-delà de votre seul CV.
+    </p>
+    @if (Session["user_role"] != null)
+    {
+        <div>@Html.ActionLink("Déconnexion", "Logout", "Login")</div>
+    }
+    else
+    {
+
+        <div>@Html.ActionLink("Connexion", "Connexion", "Login")</div>
+    }
+    
+</div>
+
+
+
+@*@{
+    ViewBag.Title = "Quizs";
+}
+<h1>Quizs</h1>
+<div class="col-md-2">
+    <h4>
+        Categories
+    </h4>
+    <div class="list-group">
+        @Html.ActionLink("All", "Index", null, new { @class = Request["Category"] == null ? "list-group-item active" : "list-group-item" })
+        @foreach (var item in Model.QuizCategories)
+        {
+            @Html.ActionLink(item.Category, "Index", new { Category = item.Category }, new { @class = Request["Category"] == item.Category ? "list-group-item active" : "list-group-item" })
+        }
+    </div>
+</div>
+
+<div class="col-md-10">
+    @foreach (var item in Model.Quizs)
+    {
+        <div class="col-md-4" style="height:320px; padding:10px;margin:10px;border:solid thin solid">
+            <div class="col-md-12">
+                <strong>@item.Subject</strong>
+            </div>
+            <div class="col-md-12">
+                <p>@item.Description</p>
+            </div>
+            <div class="col-md-12">
+                <a href="/Home/Demarrer/@item.Id" class="btn btn-default">Démarrer</a>
+            </div>
+
+        </div>
+    }
+</div>*@
+
+
