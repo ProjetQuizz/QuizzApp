@@ -1,0 +1,44 @@
+﻿@model QuizApp.Models.QuizQuestion
+
+<div>
+    <h4>QuizQuestion</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Quiz.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Quiz.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.QstText)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.QstText)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsMultiple)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsMultiple)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumOrdrer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumOrdrer)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
