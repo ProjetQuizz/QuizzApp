@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Quiz";
+}
+
+<h2>QCM</h2>
+<div class="form-color">
+    @using (Html.BeginForm("Start", "Quizzz", FormMethod.Post))
+    {
+
+        @Html.AntiForgeryToken()
+
+        <div class="form-horizontal">
+            <div class="form-group">
+                @*@Messages.QuizChoice*@ Choisir votre quiz
+                <div class="col-md-10">
+                    @Html.DropDownList("SelectedQuizId",
+                                      @ViewData["QuizList"] as SelectList,
+                                      "-- select --",
+                                      new { @class = "form-control selectpicker" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Démarrer" class="btn btn-default" />
+                    @*<a href="/Quizzz/Progress/" class="btn btn-default">Démarrer</a>*@
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+
+

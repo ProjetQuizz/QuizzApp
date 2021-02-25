@@ -1,5 +1,4 @@
-﻿using QuizApp.Interceptors;
-using QuizApp.Models;
+﻿using QuizApp.Models;
 using QuizApp.Repositories;
 using QuizApp.Services;
 using System;
@@ -10,32 +9,23 @@ using System.Web.Mvc;
 
 namespace QuizApp.Controllers
 {
-    public class QuizManagerController : Controller
+    public class QuizzzController : Controller
     {
-        // GET: QuizManager  
-
         private MyContext db = new MyContext();
-<<<<<<< HEAD
-        private IQuizService quizService;
-
-        private IQuizQuestionService questionService;
-
-=======
         IQuizService quizService;
 
         IQuizQuestionService questionService;
         QuizTest quizTest;
         QuizQuestion qst;
         string choiceStr;
->>>>>>> 8921967022a046197d837e798133eeeab3b2ed14
 
-        public QuizManagerController()
+        public QuizzzController()
         {
             quizService = new QuizService(new QuizRepository(db));
             questionService = new QuizQuestionService(new QuizQuestionRepository(db));
         }
 
-
+      
         // GET: Quiz
         public ActionResult Index()
         {
@@ -51,7 +41,6 @@ namespace QuizApp.Controllers
             }
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Start(FormCollection form)
@@ -62,23 +51,26 @@ namespace QuizApp.Controllers
             Session["quizId"] = selectedQuizId;
             Session["ordre"] = 1;
 
-            QuizQuestion qst = questionService.FindQuestion(selectedQuizId, 1);
+            QuizQuestion qst = questionService.FindQuestionById(selectedQuizId);
             return View("Progress", qst);
         }
-
-
-       
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Next(FormCollection form)
         {
-            int score = Convert.ToInt32(Session["score"]);
+          int score = Convert.ToInt32(Session["score"]);
             int selectedQuizId = Convert.ToInt32(Session["quizId"]);
             int ordre = Convert.ToInt32(Session["ordre"]);
+            //  Quizz qcm = quizService.FindById(selectedQuizId);
             Quizz qcm = quizService.FindById(selectedQuizId);
             QuizQuestion qstEnCours = qcm.Questions[ordre - 1];
 
+            //int score = Convert.ToInt32(Session["score"]);
+            //int selectedQuizId = Convert.ToInt32(Session["quizId"]);
+            //int ordre = Convert.ToInt32(Session["ordre"]);
+            //Quiz qcm = QuizDao.FindQuiz(selectedQuizId);
+            //Question qstEnCours = qcm.ListeQsts[ordre - 1];
             if (!qstEnCours.IsMultiple)
             {
 
@@ -88,20 +80,10 @@ namespace QuizApp.Controllers
                     score++;
                     Session["score"] = score;
                 }
-<<<<<<< HEAD
-                else
-                {
-                    score--;
-                    Session["score"] = score;
-                }
             }
-            else 
-=======
-            }
-            else if (qstEnCours.IsMultiple)
->>>>>>> 8921967022a046197d837e798133eeeab3b2ed14
+            else if(qstEnCours.IsMultiple)
             {
-                // 
+               // 
                 string[] reponses = form.GetValues("selectedRep[]");
                 bool[] tabRep = new bool[reponses.Length];
                 for (int i = 0; i < reponses.Length; i++)
@@ -109,33 +91,12 @@ namespace QuizApp.Controllers
                     tabRep[i] = quizService.FindReponse(selectedQuizId, qstEnCours.Id,
                                                     Convert.ToInt32(reponses[i])).IsCorrect;
                 }
-<<<<<<< HEAD
-                bool exist = tabRep.Contains(false);
-                if (exist == true)
-                {
-                    score--;
-                    Session["score"] = score;
-                }
-
-                else 
-=======
                 bool? exist = tabRep.ToList().Find(b => b == false);
                 if (!exist.HasValue || (exist.HasValue && exist == false))
->>>>>>> 8921967022a046197d837e798133eeeab3b2ed14
                 {
                     score++;
                     Session["score"] = score;
                 }
-<<<<<<< HEAD
-            }
-
-
-
-            
-
-        //On vérifie s'il reste des questions à afficher
-            if (ordre<qcm.Questions.Count)
-=======
 
 
 
@@ -143,7 +104,6 @@ namespace QuizApp.Controllers
 
             //On vérifie s'il reste des questions à afficher
             if (ordre < qcm.Questions.Count)
->>>>>>> 8921967022a046197d837e798133eeeab3b2ed14
             {
                 ordre++;
                 Session["ordre"] = ordre;
@@ -158,9 +118,63 @@ namespace QuizApp.Controllers
         }
 
 
-<<<<<<< HEAD
-   }
-=======
     }
->>>>>>> 8921967022a046197d837e798133eeeab3b2ed14
 }
+
+            //    if (!qstEnCours.IsMultiple)
+            //    {
+            //        int choice = Convert.ToInt32(choiceStr);
+            //        if (choice < 1 || choice > qst.Reponses.Count)
+            //        {
+            //            throw new Exception("Erreur: le choix doit être entre 1 et " + qst.Reponses.Count);
+            //        }
+
+//        if (qst.Reponses[choice - 1].IsCorrect)
+//        {
+//            quizTest.Score++;
+//        }
+
+//        quizTest.UserReponses.Add(qst, new List<QuizReponse>() { qst.Reponses[choice - 1] });
+//    }
+//    else //plusieurs réponses possibles 1,3
+//    {
+//        string[] choices = choiceStr.Split(',');
+//        List<QuizReponse> userResp = new List<QuizReponse>();
+//        foreach (string choice in choices)
+//        {
+//            int choiceX = Convert.ToInt32(choice);
+//            if (choiceX < 1 || choiceX > qst.Reponses.Count)
+//            {
+//                throw new Exception("Erreur: le choix doit être entre 1 et " + qst.Reponses.Count);
+//            }
+
+//            if (qst.Reponses[choiceX - 1].IsCorrect)
+//            {
+//                quizTest.Score++;
+//            }
+//            else
+//            {
+//                quizTest.Score--;
+//            }
+
+//            userResp.Add(qst.Reponses[choiceX - 1]);
+//        }
+//        quizTest.UserReponses.Add(qst, userResp);
+//    }
+
+
+
+//    //On vérifie s'il reste des questions à afficher
+//    if (ordre < qcm.Questions.Count)
+//    {
+//        ordre++;
+//        Session["ordre"] = ordre;
+//        QuizQuestion qst = questionService.FindQuestion(selectedQuizId, ordre);
+//        return View("Progress", qst);
+//    }
+//    else
+//    {
+//        //afficher le score
+//        return View("Result");
+//    }
+//}

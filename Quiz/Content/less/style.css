@@ -52,9 +52,12 @@ body .body-content .Page-Connexion {
   color: #ffffff;
   background-color: rgba(16, 1, 1, 0.85);
 }
+<<<<<<< HEAD
 body .body-content .Page-Connexion p {
   font-size: 3em;
 }
+=======
+>>>>>>> 8921967022a046197d837e798133eeeab3b2ed14
 body .body-content .Page-Connexion .btn-create {
   width: 100%;
   display: flex;
