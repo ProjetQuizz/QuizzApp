@@ -14,14 +14,14 @@
         Vous donne l’opportunité d’exprimer vos compétences
         au-delà de votre seul CV.
     </p>
-    @if (Session["user_role"] != null)
+    @*@if (Session["user_role"] != null)
     {
         <button type="button" value="Logout" class="btn btn-danger" onclick="location.href='@Url.Action( "Logout", "Login")'">Logout</button>
     }
     else
     {
         <button type="button" value="Connexion" class="btn btn-primary" onclick="location.href='@Url.Action( "Connexion", "Login")'">Connexion</button>
-    }
+    }*@
 </div>
 
 @*<h1>Quizs</h1>
