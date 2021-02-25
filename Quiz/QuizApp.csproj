@@ -142,7 +142,6 @@
     <Compile Include="Controllers\QuizManagerController.cs" />
     <Compile Include="Controllers\QuizQuestionController.cs" />
     <Compile Include="Controllers\QuizzsController.cs" />
-    <Compile Include="Controllers\QuizzzController.cs" />
     <Compile Include="Controllers\ReponsesController.cs" />
     <Compile Include="Controllers\TestDataController.cs" />
     <Compile Include="Controllers\UserSpaceController.cs" />
@@ -303,7 +302,6 @@
     <Content Include="Views\QuizCategory\Details.cshtml" />
     <Content Include="Views\QuizQuestion\Details.cshtml" />
     <Content Include="Views\QuizCategory\Index.cshtml" />
-    <Content Include="Views\Shared\Layout2.cshtml" />
     <Content Include="Views\AdminSpace\Index.cshtml" />
     <Content Include="Views\UserSpace\Index.cshtml" />
     <Content Include="Views\Utilisateurs\Edit.cshtml" />
@@ -315,8 +313,6 @@
     <Content Include="Views\QuizManager\Progress.cshtml" />
     <Content Include="Views\QuizManager\Result.cshtml" />
     <Content Include="Views\QuizQuestion\Index.cshtml" />
-    <Content Include="Views\Quizzz\Index.cshtml" />
-    <Content Include="Views\Quizzz\Progress.cshtml" />
     <Content Include="Views\Home\CheckReponse.cshtml" />
     <Content Include="Views\Utilisateurs\Index.cshtml" />
   </ItemGroup>

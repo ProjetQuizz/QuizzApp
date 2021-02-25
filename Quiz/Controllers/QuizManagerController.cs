@@ -83,7 +83,7 @@ namespace QuizApp.Controllers
                 {
                     score--;
                     Session["score"] = score;
-            }
+                }
             }
             else 
             {
