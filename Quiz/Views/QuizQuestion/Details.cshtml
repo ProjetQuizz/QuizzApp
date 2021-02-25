@@ -1,44 +1,45 @@
 ﻿@model QuizApp.Models.QuizQuestion
+<div class="form-color">
+    <div>
+        <h4>QuizQuestion</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Quiz.Subject)
+            </dt>
 
-<div>
-    <h4>QuizQuestion</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Quiz.Subject)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Quiz.Subject)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Quiz.Subject)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.QstText)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.QstText)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.QstText)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.QstText)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.IsMultiple)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IsMultiple)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.IsMultiple)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.IsMultiple)
-        </dd>
+            <dt>
+                @Html.DisplayNameFor(model => model.NumOrdrer)
+            </dt>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NumOrdrer)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.NumOrdrer)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.NumOrdrer)
-        </dd>
-
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

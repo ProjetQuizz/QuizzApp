@@ -1,20 +1,21 @@
 ﻿@model QuizApp.Models.QuizCategory
+<div class="form-color">
+    <div>
+        <h4>QuizCategory</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Category)
+            </dt>
 
-<div>
-    <h4>QuizCategory</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
+            <dd>
+                @Html.DisplayFor(model => model.Category)
+            </dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Category)
-        </dd>
-
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
