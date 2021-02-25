@@ -33,9 +33,7 @@ body footer {
 body header .logo,
 body footer .logo {
   text-align: center;
-  display: block;
   max-width: 205px;
-  margin: auto;
 }
 body .body-content {
   background-image: url(../images/presentation.png);
