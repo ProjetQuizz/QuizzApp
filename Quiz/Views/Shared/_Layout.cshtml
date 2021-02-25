@@ -22,6 +22,25 @@
             <a href="/" class="logo">
                 <img src="~/Content/images/logo-TechQuizz.png" />
             </a>
+            <ul class="nav navbar-right">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle btn btn-dark" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Menu
+                    </a>
+                    <div class="dropdown-menu" >
+                        @if (Session["user_role"] != null)
+                        {
+                             @Html.ActionLink("Déconnexion", "Logout", "Login", new { area = "" }, new { @class = "dropdown-item" })
+
+                         }
+                        else
+                        {
+                            @Html.ActionLink("Connexion", "Connexion", "Login", new { area = "" }, new { @class = "dropdown-item" })
+                        }
+                    </div>
+                </li>
+                   
+             </ul>
         </div>
     </header>
     <!--<div class="navbar navbar-inverse navbar-fixed-top">
@@ -34,24 +53,8 @@
                 </button>-->
     @*@Html.ActionLink("QUIZ", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })*@
     <!--</div>-->
-    @*<div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                @if (Session["user_role"] != null)
-                {
-                    <li>@Html.ActionLink("Déconnexion", "Logout", "Login")</li>
-
-
-                }
-                else
-                {
-                    <li>@Html.ActionLink("Créer un compte", "Create", "Utilisateurs")</li>
-
-                    <li>@Html.ActionLink("Connexion", "Connexion", "Login")</li>
-
-                }
-            </ul>
+      @*<div class="navbar-collapse collapse">
+            
         </div>*@
     <!--</div>
     </div>-->

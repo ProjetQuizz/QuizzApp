@@ -2,7 +2,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Espace Candidat</h2>
+<h2>Bonjour @Session["user_name"]</h2>
 
 
 @Html.ActionLink("QUIZ", "Index", "QuizManager", new { area = "" }, new { @class = "navbar-brand" })
