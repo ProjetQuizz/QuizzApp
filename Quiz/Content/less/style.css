@@ -1,0 +1,66 @@
+﻿/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+@import "colors.css";
+.form-color {
+  background: rgba(17, 3, 3, 0.85);
+  box-sizing: border-box;
+  margin-top: 60px;
+  padding: 30px;
+  color: #ffffff;
+}
+.form-color a {
+  color: #ffffff !important;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  padding: 0 !important;
+  width: 100%;
+  align-items: center;
+  /*border: green solid 2px;*/
+}
+body header,
+body footer {
+  background-color: #958C8C;
+  padding: 20px;
+}
+body header .logo,
+body footer .logo {
+  text-align: center;
+  display: block;
+  max-width: 205px;
+  margin: auto;
+}
+body .body-content {
+  background-image: url(../images/presentation.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 100%;
+}
+body .body-content .Page-Connexion {
+  max-width: 798px;
+  width: 100%;
+  margin: 15% auto;
+  text-align: center;
+  padding: 30px;
+  color: #ffffff;
+  background-color: rgba(16, 1, 1, 0.85);
+}
+body .body-content .Page-Connexion .btn-create {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 2rem;
+  color: whitesmoke;
+}
+body .container-wrapper {
+  background: #000;
+}

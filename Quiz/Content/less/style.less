@@ -1,0 +1,61 @@
+﻿@import "colors.less";
+@import "elements.less";
+@import "form.less";
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    padding: 0 !important;
+    width: 100%;
+    align-items: center;
+    /*border: green solid 2px;*/
+    header, footer {
+        background-color: @color-brown;
+        padding: 20px;
+
+        .logo {
+            text-align: center;
+            display: block;
+            max-width: 205px;
+            margin: auto;
+        }
+    }
+
+    .body-content {
+        background-image: url(../images/presentation.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        background-size: cover;
+        height: 100%;
+
+
+        .Page-Connexion {
+            max-width: 798px;
+            width: 100%;
+            margin: 15% auto;
+            text-align: center;
+            padding: 30px;
+            color: @color-white;
+            background-color: rgba(16, 1, 1, 0.85);
+
+            
+
+            .btn-create {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                padding-top: 2rem;
+                color: whitesmoke;
+            }
+        }
+    }
+
+    .container-wrapper {
+        background: #000;
+    }
+}
+
+
