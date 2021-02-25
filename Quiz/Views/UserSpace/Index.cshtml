@@ -1,0 +1,8 @@
+﻿@{ ViewBag.Title = "Index"; }
+
+<div class="Page-Connexion">
+    <p>
+        Bonjour @Session["user_name"]
+    </p>
+    @Html.ActionLink("QUIZ", "Index", "QuizManager", new { area = "" }, new { @class = "navbar-brand" })
+</div>
