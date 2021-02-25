@@ -30,20 +30,28 @@
                     <div class="dropdown-menu">
                         @if (Session["user_role"] != null)
                         {
+                            switch (Enum.Parse(typeof(UserRole), Session["user_role"].ToString()))
+                            {
+                                case UserRole.ADMIN:
+                                    @Html.ActionLink("Quiz Admin", "Index", "Quizzs", new { area = "" }, new { @class = "dropdown-item" })
+                                    <br />
+                                    @Html.ActionLink("Gestion utilisateur", "Index", "Users", new { area = "" }, new { @class = "dropdown-item" })
+                                    @*@Html.ActionLink("Gestion utilisateur", "Index", "Users"}*@
 
-                            @Html.ActionLink("Quiz Admin", "Index", "Quizzs", new { area = "" }, new { @class = "dropdown-item" })
-                            <br />
-                            @Html.ActionLink("Gestion utilisateur", "Index", "Users", new { area = "" }, new { @class = "dropdown-item" })
-                            @*@Html.ActionLink("Gestion utilisateur", "Index", "Users"}*@
+                                    <br />
+                                    @Html.ActionLink("Gestion categories", "Index", "QuizCategory", new { area = "" }, new { @class = "dropdown-item" })
+                                    <br />
+                                    @Html.ActionLink("Gestion des Questions", "Index", "QuizQuestion", new { area = "" }, new { @class = "dropdown-item" })
+                                    <br />
+                                    @Html.ActionLink("Reponse Admin", "Index", "Reponses", new { area = "" }, new { @class = "dropdown-item" })
+                                    <br />
+                                    @Html.ActionLink("Déconnexion", "Logout", "Login", new { area = "" }, new { @class = "dropdown-item" })
+                                    break;
+                                case UserRole.USER:
+                                    @Html.ActionLink("Déconnexion", "Logout", "Login", new { area = "" }, new { @class = "dropdown-item" })
+                                    break;
+                            }
 
-                            <br />
-                            @Html.ActionLink("Gestion categories", "Index", "QuizCategory", new { area = "" }, new { @class = "dropdown-item" })
-                            <br />
-                            @Html.ActionLink("Gestion des Questions", "Index", "QuizQuestion", new { area = "" }, new { @class = "dropdown-item" })
-                            <br />
-                            @Html.ActionLink("Reponse Admin", "Index", "Reponses", new { area = "" }, new { @class = "dropdown-item" })
-                            <br />
-                            @Html.ActionLink("Déconnexion", "Logout", "Login", new { area = "" }, new { @class = "dropdown-item" })
 
                         }
                         else

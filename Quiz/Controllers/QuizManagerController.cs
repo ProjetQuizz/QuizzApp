@@ -111,10 +111,10 @@ namespace QuizApp.Controllers
 
 
 
-            }
+            
 
-            //On vérifie s'il reste des questions à afficher
-            if (ordre < qcm.Questions.Count)
+        //On vérifie s'il reste des questions à afficher
+            if (ordre<qcm.Questions.Count)
             {
                 ordre++;
                 Session["ordre"] = ordre;
@@ -129,5 +129,5 @@ namespace QuizApp.Controllers
         }
 
 
-    }
+   }
 }
